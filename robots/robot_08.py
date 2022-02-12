@@ -1,4 +1,4 @@
-import logging
+from settings import logger
 
 from robots.base_robot import BaseRobot
 from robots.robot_register import robot_register
@@ -9,6 +9,6 @@ class Robot08(BaseRobot):
     robot_id = 8
 
     def run(self, event, context):
-        logging.error('Robot: %s', self.robot_id)
-        logging.error('Event: %s', event)
-        logging.error('Context: %s', context)
+        logger.info('Robot: %s', self.robot_id)
+        logger.info('Event: %s', event)
+        logger.info('Context: %s', context)
