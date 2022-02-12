@@ -1,0 +1,17 @@
+service: robots-poc
+#app: your-app-name
+#org: your-org-name
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  ecr:
+    images:
+      robots-image:
+        path: ./
+
+functions:
+  robots:
+    image:
+      name: robots-image

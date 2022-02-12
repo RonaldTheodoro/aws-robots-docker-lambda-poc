@@ -1,0 +1,10 @@
+**/.git
+**/.DS_Store
+**/node_modules
+**/.gitignore
+**/.npmignore
+**/.serverless
+**/.vscode
+**/__pycache__
+**/*.pyc
+README.md
