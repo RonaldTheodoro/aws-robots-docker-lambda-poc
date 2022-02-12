@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 click = "*"
+watchtower = "*"
+python-decouple = "*"
 
 [dev-packages]
 
