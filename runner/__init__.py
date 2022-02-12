@@ -1,4 +1,4 @@
-from runner.robot_runner import WorkerRunner
+from runner.worker_runner import WorkerRunner
 
 
 runner = WorkerRunner()

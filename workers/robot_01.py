@@ -1,7 +1,7 @@
 from settings import logger
 
-from robots.base_robot import BaseWorker
-from robots.worker_register import worker_register
+from workers.base_worker import BaseWorker
+from workers.worker_register import worker_register
 
 
 @worker_register
