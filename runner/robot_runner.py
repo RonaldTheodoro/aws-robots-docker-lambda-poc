@@ -1,6 +1,6 @@
 import json
 
-from robots.robot_register import robot_register
+from workers.worker_register import robot_register
 from settings import logger
 
 
