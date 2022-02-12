@@ -1,8 +1,10 @@
 import logging
 
 from robots.base_robot import BaseRobot
+from robots.robot_register import robot_register
 
 
+@robot_register
 class Robot10(BaseRobot):
     robot_id = 10
 

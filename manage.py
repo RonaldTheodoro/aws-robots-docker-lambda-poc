@@ -3,7 +3,7 @@ import logging
 
 import click
 
-from robots import get_robot_by_id
+from robots.robot_register import robot_register
 
 
 class RobotRunner:
@@ -22,7 +22,7 @@ class RobotRunner:
             return response
 
         try:
-            robot = get_robot_by_id(robot_id)
+            robot = robot_register.get_robot_by_id(robot_id)
         except Exception:
             logging.exception('An error happend when trying to get robot')
             response = {
