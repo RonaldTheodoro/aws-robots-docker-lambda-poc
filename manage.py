@@ -1,5 +1,5 @@
 import json
-import logging
+from settings import logger
 
 import click
 
@@ -12,7 +12,7 @@ class RobotRunner:
         try:
             robot_id = int(event['robot_id'])
         except KeyError:
-            logging.error('Event has not robot_id')
+            logger.error('Event has not robot_id')
             response = {
                 'statusCode': 500,
                 'body': json.dumps({
@@ -24,7 +24,7 @@ class RobotRunner:
         try:
             robot = robot_register.get_robot_by_id(robot_id)
         except Exception:
-            logging.exception('An error happend when trying to get robot')
+            logger.exception('An error happend when trying to get robot')
             response = {
                 'statusCode': 500,
                 'body': json.dumps({
@@ -37,7 +37,7 @@ class RobotRunner:
             instance = robot()
             instance(event, context)
         except Exception:
-            logging.exception('An error happend during the robot execution')
+            logger.exception('An error happend during the robot execution')
             response = {
                 'statusCode': 500,
                 'body': json.dumps({
