@@ -15,3 +15,43 @@ functions:
   robots:
     image:
       name: robots-image
+
+  robot_01:
+    image:
+      name: robots-image
+
+  robot_02:
+    image:
+      name: robots-image
+
+  robot_03:
+    image:
+      name: robots-image
+
+  robot_04:
+    image:
+      name: robots-image
+
+  robot_05:
+    image:
+      name: robots-image
+
+  robot_06:
+    image:
+      name: robots-image
+
+  robot_07:
+    image:
+      name: robots-image
+
+  robot_08:
+    image:
+      name: robots-image
+
+  robot_09:
+    image:
+      name: robots-image
+
+  robot_10:
+    image:
+      name: robots-image
