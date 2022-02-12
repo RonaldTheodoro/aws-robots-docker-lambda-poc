@@ -1,7 +1,9 @@
 import abc
+import requests
 
 
 class BaseWorker(abc.ABC):
+    session = requests.Session()
     @property
     @abc.abstractmethod
     def robot_id(self):
