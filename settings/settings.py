@@ -9,6 +9,10 @@ class Settings:
     STAGE = config('STAGE', cast=Choices(['local', 'dev', 'homolog', 'prod']))
 
     @property
+    def extras(self):
+        return self.BASE_DIR / 'extras'
+
+    @property
     def is_local(self):
         return self.STAGE == 'local'
 
