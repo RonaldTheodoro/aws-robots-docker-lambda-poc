@@ -1,7 +1,7 @@
 import abc
 
 
-class BaseRobot(abc.ABC):
+class BaseWorker(abc.ABC):
     @property
     @abc.abstractmethod
     def robot_id(self):

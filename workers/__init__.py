@@ -1,6 +1,6 @@
-from workers.robot_register import robot_register
+from workers.worker_register import worker_register
 
 
 __all__ = [
-    'robot_register',
+    'worker_register',
 ]

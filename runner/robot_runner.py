@@ -1,10 +1,10 @@
 import json
 
-from workers.worker_register import robot_register
+from workers.worker_register import worker_register
 from settings import logger
 
 
-class RobotRunner:
+class WorkerRunner:
 
     def __call__(self, event, context):
         try:
@@ -20,7 +20,7 @@ class RobotRunner:
             return response
 
         try:
-            robot = robot_register.get_robot_by_id(robot_id)
+            robot = worker_register.get_robot_by_id(robot_id)
         except Exception:
             logger.exception('An error happend when trying to get robot')
             response = {

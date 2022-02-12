@@ -1,6 +1,6 @@
-from runner.robot_runner import RobotRunner
+from runner.robot_runner import WorkerRunner
 
 
-runner = RobotRunner()
+runner = WorkerRunner()
 
 __all__ = ['runner']
