@@ -1,7 +1,5 @@
 from settings.logger import logger
-from settings.settings import Settings
+from settings.settings import settings
 
-
-settings = Settings()
 
 __all__ = ['logger', 'settings']
