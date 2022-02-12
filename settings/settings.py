@@ -6,11 +6,19 @@ from decouple import Choices
 
 class Settings:
     BASE_DIR = pathlib.Path(__file__).parent.parent
-    STAGE = config('STAGE', cast=Choices(['local', 'prod']))
+    STAGE = config('STAGE', cast=Choices(['local', 'dev', 'homolog', 'prod']))
 
     @property
     def is_local(self):
         return self.STAGE == 'local'
+
+    @property
+    def is_dev(self):
+        return self.STAGE == 'dev'
+
+    @property
+    def is_homolog(self):
+        return self.STAGE == 'homolog'
 
     @property
     def is_prod(self):
@@ -18,7 +26,7 @@ class Settings:
 
     @property
     def is_aws(self):
-        return any([self.is_prod])
+        return any([self.is_dev, self.is_homolog, self.is_prod])
 
 
 settings = Settings()

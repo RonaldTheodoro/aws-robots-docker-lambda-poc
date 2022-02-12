@@ -6,6 +6,8 @@ frameworkVersion: '3'
 
 provider:
   name: aws
+  environment:
+    STAGE: dev
   ecr:
     images:
       robots-image:
