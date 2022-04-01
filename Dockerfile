@@ -4,4 +4,4 @@ COPY . ./
 
 RUN pip install pipenv && pipenv install --deploy --system
 
-CMD ["manage.run_robot"]
+CMD ["manage.run_worker"]

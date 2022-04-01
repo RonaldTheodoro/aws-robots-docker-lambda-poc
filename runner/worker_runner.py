@@ -8,38 +8,38 @@ class WorkerRunner:
 
     def __call__(self, event, context):
         try:
-            robot_id = int(event['robot_id'])
+            worker_id = int(event['worker_id'])
         except KeyError:
-            logger.error('Event has not robot_id')
+            logger.error('Event has not worker_id')
             response = {
                 'statusCode': 500,
                 'body': json.dumps({
-                    'message': 'Event has not robot_id',
+                    'message': 'Event has not worker_id',
                 })
             }
             return response
 
         try:
-            robot = worker_register.get_robot_by_id(robot_id)
+            worker = worker_register.get_worker_by_id(worker_id)
         except Exception:
-            logger.exception('An error happend when trying to get robot')
+            logger.exception('An error happend when trying to get worker')
             response = {
                 'statusCode': 500,
                 'body': json.dumps({
-                    'message': 'An error happend when trying to get robot',
+                    'message': 'An error happend when trying to get worker',
                 })
             }
             return response
 
         try:
-            instance = robot()
+            instance = worker()
             instance(event, context)
         except Exception:
-            logger.exception('An error happend during the robot execution')
+            logger.exception('An error happend during the worker execution')
             response = {
                 'statusCode': 500,
                 'body': json.dumps({
-                    'message': 'An error happend during the robot execution',
+                    'message': 'An error happend during the worker execution',
                 })
             }
             return response

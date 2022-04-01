@@ -1,3 +1,8 @@
 {
-  "cards_rows": "//table//tr[contains(@class, 'monster') or contains(@class, 'effect') or contains(@class, 'fusion') or contains(@class, 'link') or contains(@class, 'synchro') or contains(@class, 'xyz') or contains(@class, 'spell') or contains(@class, 'trap')]"
+  "cards_rows": "//table//tr[contains(@class, 'monster') or contains(@class, 'effect') or contains(@class, 'fusion') or contains(@class, 'link') or contains(@class, 'synchro') or contains(@class, 'xyz') or contains(@class, 'spell') or contains(@class, 'trap')]",
+  "card_type": "./td[1]",
+  "card_name": "./td[2]",
+  "advanced_format": "./td[3]",
+  "traditional_format": "./td[4]",
+  "remarks": "./td[5]"
 }

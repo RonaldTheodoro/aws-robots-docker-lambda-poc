@@ -1,8 +1,10 @@
-from workers.banlist_tcg_us_worker import BanlistTCGUSWorker
-from workers.worker_register import worker_register
-
-
-__all__ = [
-    'BanlistTCGUSWorker',
-    'worker_register',
-]
+from workers.worker_01 import Worker01
+from workers.worker_02 import Worker02
+from workers.worker_03 import Worker03
+from workers.worker_04 import Worker04
+from workers.worker_05 import Worker05
+from workers.worker_06 import Worker06
+from workers.worker_07 import Worker07
+from workers.worker_08 import Worker08
+from workers.worker_09 import Worker09
+from workers.worker_10 import Worker10

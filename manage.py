@@ -3,7 +3,7 @@ import click
 from runner import runner
 
 
-def run_robot(event, context):
+def run_worker(event, context):
     return runner(event, context)
 
 
@@ -13,9 +13,9 @@ def cli():
 
 
 @cli.command()
-@click.option('--robot-id', required=True, type=int)
-def run(robot_id):
-    return run_robot({'robot_id': robot_id}, {})
+@click.option('--worker-id', required=True, type=int)
+def run(worker_id):
+    return run_worker({'worker_id': worker_id}, {})
 
 
 if __name__ == '__main__':
