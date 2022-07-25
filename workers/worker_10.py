@@ -10,3 +10,4 @@ class Worker10(BaseWorker):
 
     def run(self, event, context):
         logger.info('Worker 10')
+        logger.info('Event: %s', event)
