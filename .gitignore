@@ -175,5 +175,6 @@ cython_debug/
 .ionide
 
 # Support for Project snippet scope
+.payloads
 
 # End of https://www.toptal.com/developers/gitignore/api/python,serverless,visualstudiocode
