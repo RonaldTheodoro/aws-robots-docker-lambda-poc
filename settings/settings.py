@@ -13,6 +13,10 @@ class Settings:
         return self.BASE_DIR / 'extras'
 
     @property
+    def payloads(self):
+        return self.BASE_DIR / '.payloads'
+
+    @property
     def is_local(self):
         return self.STAGE == 'local'
 
