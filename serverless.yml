@@ -89,3 +89,10 @@ functions:
     events:
       - sqs:
           arn: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_10
+
+  worker_cron:
+    image:
+      name: workers-image
+    events:
+      - sqs:
+          arn: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_cron
