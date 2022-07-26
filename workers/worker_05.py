@@ -11,4 +11,3 @@ class Worker05(BaseWorker):
     def run(self, event, context):
         logger.info('Worker 05')
         logger.info('Event: %s', event)
-        raise Exception('Worker 05')
