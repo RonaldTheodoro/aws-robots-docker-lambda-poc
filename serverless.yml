@@ -26,6 +26,15 @@ functions:
     events:
       - sqs:
           arn: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_1
+    iamRoleStatements:
+      - Effect: "Allow"
+        Action:
+          - sqs:ReceiveMessage
+          - sqs:ChangeMessageVisibility
+        Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_1
+      - Effect: "Allow"
+        Action: sqs:SendMessage
+        Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_cron
 
   worker_2:
     image:
@@ -33,6 +42,15 @@ functions:
     events:
       - sqs:
           arn: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_2
+    iamRoleStatements:
+      - Effect: "Allow"
+        Action:
+          - sqs:ReceiveMessage
+          - sqs:ChangeMessageVisibility
+        Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_2
+      - Effect: "Allow"
+        Action: sqs:SendMessage
+        Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_cron
 
   worker_3:
     image:
@@ -40,6 +58,15 @@ functions:
     events:
       - sqs:
           arn: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_3
+    iamRoleStatements:
+      - Effect: "Allow"
+        Action:
+          - sqs:ReceiveMessage
+          - sqs:ChangeMessageVisibility
+        Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_3
+      - Effect: "Allow"
+        Action: sqs:SendMessage
+        Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_cron
 
   worker_4:
     image:
@@ -47,6 +74,15 @@ functions:
     events:
       - sqs:
           arn: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_4
+    iamRoleStatements:
+      - Effect: "Allow"
+        Action:
+          - sqs:ReceiveMessage
+          - sqs:ChangeMessageVisibility
+        Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_4
+      - Effect: "Allow"
+        Action: sqs:SendMessage
+        Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_cron
 
   worker_5:
     image:
@@ -54,6 +90,15 @@ functions:
     events:
       - sqs:
           arn: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_5
+    iamRoleStatements:
+      - Effect: "Allow"
+        Action:
+          - sqs:ReceiveMessage
+          - sqs:ChangeMessageVisibility
+        Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_5
+      - Effect: "Allow"
+        Action: sqs:SendMessage
+        Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_cron
 
   worker_6:
     image:
@@ -61,6 +106,15 @@ functions:
     events:
       - sqs:
           arn: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_6
+    iamRoleStatements:
+      - Effect: "Allow"
+        Action:
+          - sqs:ReceiveMessage
+          - sqs:ChangeMessageVisibility
+        Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_6
+      - Effect: "Allow"
+        Action: sqs:SendMessage
+        Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_cron
 
   worker_7:
     image:
@@ -68,6 +122,15 @@ functions:
     events:
       - sqs:
           arn: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_7
+    iamRoleStatements:
+      - Effect: "Allow"
+        Action:
+          - sqs:ReceiveMessage
+          - sqs:ChangeMessageVisibility
+        Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_7
+      - Effect: "Allow"
+        Action: sqs:SendMessage
+        Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_cron
 
   worker_8:
     image:
@@ -75,6 +138,15 @@ functions:
     events:
       - sqs:
           arn: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_8
+    iamRoleStatements:
+      - Effect: "Allow"
+        Action:
+          - sqs:ReceiveMessage
+          - sqs:ChangeMessageVisibility
+        Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_8
+      - Effect: "Allow"
+        Action: sqs:SendMessage
+        Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_cron
 
   worker_9:
     image:
@@ -82,6 +154,15 @@ functions:
     events:
       - sqs:
           arn: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_9
+    iamRoleStatements:
+      - Effect: "Allow"
+        Action:
+          - sqs:ReceiveMessage
+          - sqs:ChangeMessageVisibility
+        Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_9
+      - Effect: "Allow"
+        Action: sqs:SendMessage
+        Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_cron
 
   worker_10:
     image:
@@ -89,6 +170,15 @@ functions:
     events:
       - sqs:
           arn: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_10
+    iamRoleStatements:
+      - Effect: "Allow"
+        Action:
+          - sqs:ReceiveMessage
+          - sqs:ChangeMessageVisibility
+        Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_10
+      - Effect: "Allow"
+        Action: sqs:SendMessage
+        Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_cron
 
   worker_cron:
     image:
@@ -96,6 +186,12 @@ functions:
     events:
       - sqs:
           arn: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_cron
+    iamRoleStatements:
+      - Effect: "Allow"
+        Action:
+          - sqs:ReceiveMessage
+          - sqs:ChangeMessageVisibility
+        Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_cron
 
 plugins:
   - serverless-iam-roles-per-function
