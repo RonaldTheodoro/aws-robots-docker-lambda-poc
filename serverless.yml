@@ -25,67 +25,67 @@ functions:
       name: workers-image
     events:
       - sqs:
-          arn: arn:aws:sqs:us-east-1:227769953403:worker_1
+          arn: arn:aws:sqs:${self:provider.REGION}:${self:provider.ACCOUNT_ID}:worker_1
 
   worker_2:
     image:
       name: workers-image
     events:
       - sqs:
-          arn: arn:aws:sqs:us-east-1:227769953403:worker_2
+          arn: arn:aws:sqs:${self:provider.REGION}:${self:provider.ACCOUNT_ID}:worker_2
 
   worker_3:
     image:
       name: workers-image
     events:
       - sqs:
-          arn: arn:aws:sqs:us-east-1:227769953403:worker_3
+          arn: arn:aws:sqs:${self:provider.REGION}:${self:provider.ACCOUNT_ID}:worker_3
 
   worker_4:
     image:
       name: workers-image
     events:
       - sqs:
-          arn: arn:aws:sqs:us-east-1:227769953403:worker_4
+          arn: arn:aws:sqs:${self:provider.REGION}:${self:provider.ACCOUNT_ID}:worker_4
 
   worker_5:
     image:
       name: workers-image
     events:
       - sqs:
-          arn: arn:aws:sqs:us-east-1:227769953403:worker_5
+          arn: arn:aws:sqs:${self:provider.REGION}:${self:provider.ACCOUNT_ID}:worker_5
 
   worker_6:
     image:
       name: workers-image
     events:
       - sqs:
-          arn: arn:aws:sqs:us-east-1:227769953403:worker_6
+          arn: arn:aws:sqs:${self:provider.REGION}:${self:provider.ACCOUNT_ID}:worker_6
 
   worker_7:
     image:
       name: workers-image
     events:
       - sqs:
-          arn: arn:aws:sqs:us-east-1:227769953403:worker_7
+          arn: arn:aws:sqs:${self:provider.REGION}:${self:provider.ACCOUNT_ID}:worker_7
 
   worker_8:
     image:
       name: workers-image
     events:
       - sqs:
-          arn: arn:aws:sqs:us-east-1:227769953403:worker_8
+          arn: arn:aws:sqs:${self:provider.REGION}:${self:provider.ACCOUNT_ID}:worker_8
 
   worker_9:
     image:
       name: workers-image
     events:
       - sqs:
-          arn: arn:aws:sqs:us-east-1:227769953403:worker_9
+          arn: arn:aws:sqs:${self:provider.REGION}:${self:provider.ACCOUNT_ID}:worker_9
 
   worker_10:
     image:
       name: workers-image
     events:
       - sqs:
-          arn: arn:aws:sqs:us-east-1:227769953403:worker_10
+          arn: arn:aws:sqs:${self:provider.REGION}:${self:provider.ACCOUNT_ID}:worker_10
