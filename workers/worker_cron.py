@@ -8,6 +8,6 @@ from workers.worker_register import worker_register
 class WorkerCron(BaseWorker):
     worker_id = 'cron'
 
-    def run(self, record):
-        logger.info('Worker %s', self.worker_id)
-        logger.info('Record: %s', record)
+    def run_robot(self, message):
+        logger.info('WorkerCron: %s', message)
+
