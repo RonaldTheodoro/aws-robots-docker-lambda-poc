@@ -96,3 +96,6 @@ functions:
     events:
       - sqs:
           arn: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_cron
+
+plugins:
+  - serverless-iam-roles-per-function
