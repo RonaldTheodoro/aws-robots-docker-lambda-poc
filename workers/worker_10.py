@@ -8,6 +8,6 @@ from workers.worker_register import worker_register
 class Worker10(BaseWorker):
     worker_id = 10
 
-    def run(self, event, context):
-        logger.info('Worker 10')
-        logger.info('Event: %s', event)
+    def run(self, record):
+        logger.info('Worker %s', self.worker_id)
+        logger.info('Record: %s', record)

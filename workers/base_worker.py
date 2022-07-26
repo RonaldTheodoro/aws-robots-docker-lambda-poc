@@ -9,8 +9,8 @@ class BaseWorker(abc.ABC):
         pass
 
     @abc.abstractmethod
-    def run(self, event, context):
+    def run(self, record):
         pass
 
-    def __call__(self, event, context):
-        return self.run(event, context)
+    def __call__(self, record):
+        return self.run(record)

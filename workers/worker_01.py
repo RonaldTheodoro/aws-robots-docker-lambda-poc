@@ -13,11 +13,11 @@ sqs_client = boto3.client('sqs')
 class Worker01(BaseWorker):
     worker_id = 1
 
-    def run(self, event, context):
-        logger.info('Worker 01')
-        logger.info('Event: %s', event)
+    def run(self, record):
+        logger.info('Worker %s', self.worker_id)
+        logger.info('Record: %s', record)
 
-        msg = json.loads(event['body'])
+        msg = json.loads(record['body'])
 
         response = sqs_client.send_message(
             QueueUrl='https://sqs.us-east-1.amazonaws.com/986806511625/worker_cron',

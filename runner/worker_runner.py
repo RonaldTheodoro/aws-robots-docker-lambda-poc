@@ -11,7 +11,7 @@ class WorkerRunner:
         logger.info('Start worker runner')
 
         for record in event['Records']:
-            self.process_record(event, context, record)
+            self.process_record(record)
 
         response = {
             "statusCode": 200,
@@ -19,7 +19,7 @@ class WorkerRunner:
         }
         return response
 
-    def process_record(self, event, context, record):
+    def process_record(self, record):
         logger.info('Getting worker_id')
         worker_id = self.get_worker_id_from_sqs_name(record)
 
@@ -28,7 +28,7 @@ class WorkerRunner:
 
         logger.info('Running worker')
         instance = worker()
-        instance(event, context)
+        instance(record)
     
         logger.info('Finish worker')
 
