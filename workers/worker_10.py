@@ -1,4 +1,4 @@
-from settings import logger
+from logger import logger
 
 from workers.base_worker import BaseWorker
 from workers.worker_register import worker_register

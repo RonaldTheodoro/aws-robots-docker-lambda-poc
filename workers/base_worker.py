@@ -1,7 +1,7 @@
 import abc
 import json
 
-from settings import logger
+from logger import logger
 
 
 class BaseWorker(abc.ABC):

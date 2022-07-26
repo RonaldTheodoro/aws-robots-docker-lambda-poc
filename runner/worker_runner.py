@@ -2,7 +2,7 @@ import json
 import re
 
 from workers.worker_register import worker_register
-from settings import logger
+from logger import logger
 
 
 class WorkerRunner:
