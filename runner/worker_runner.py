@@ -11,23 +11,26 @@ class WorkerRunner:
         logger.info('Start worker runner')
 
         for record in event['Records']:
-            logger.info('Getting worker_id')
-            worker_id = self.get_worker_id_from_sqs_name(record)
-
-            logger.info('worker_id: %d', worker_id)
-            worker = worker_register.get_worker_by_id(worker_id)
-
-            logger.info('Running worker')
-            instance = worker()
-            instance(event, context)
-
-            logger.info('Finish worker')
+            self.process_record(event, context, record)
 
         response = {
             "statusCode": 200,
             "body": json.dumps({'message': 'OK'})
         }
         return response
+
+    def process_record(self, event, context, record):
+        logger.info('Getting worker_id')
+        worker_id = self.get_worker_id_from_sqs_name(record)
+
+        logger.info('worker_id: %d', worker_id)
+        worker = worker_register.get_worker_by_id(worker_id)
+
+        logger.info('Running worker')
+        instance = worker()
+        instance(event, context)
+    
+        logger.info('Finish worker')
 
     def get_worker_id_from_sqs_name(self, record):
         sqs_name = record['eventSourceARN']
