@@ -2,7 +2,7 @@ class WorkerRegister:
     __workers = {}
 
     def __call__(self, worker_cls):
-        self.__workers[worker_cls.worker_id] = worker_cls
+        self.__workers[str(worker_cls.worker_id)] = worker_cls
         return worker_cls
 
     def get_worker_by_id(self, worker_id):
