@@ -8,6 +8,8 @@ provider:
   name: aws
   environment:
     STAGE: dev
+    ACCOUNT_ID: ${env:ACCOUNT_ID}
+    REGION: 'us-east-1'
   ecr:
     images:
       workers-image:
