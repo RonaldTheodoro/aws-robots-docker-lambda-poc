@@ -13,6 +13,8 @@ class WorkerRunner:
         for record in event['Records']:
             self.process_record(record)
 
+        logger.info('Finish worker')
+
         response = {
             "statusCode": 200,
             "body": json.dumps({'message': 'OK'})
@@ -30,7 +32,6 @@ class WorkerRunner:
         instance = worker()
         instance(record)
     
-        logger.info('Finish worker')
 
     def get_worker_id_from_sqs_name(self, record):
         sqs_name = record['eventSourceARN']
