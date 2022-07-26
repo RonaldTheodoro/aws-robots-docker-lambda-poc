@@ -27,12 +27,21 @@ class LocalRunner:
 
     def convert_payload_to_sqs_format(self, payload):
         for event in payload:
-            sqs_event = {
-                'Records': [
-                    {
-                        'body': json.dumps(event['body']),
-                        'eventSourceARN': event['sqs_queue'],
-                    }
-                ]
-            }
-            yield sqs_event
+            yield self.create_sqs_event(event)
+
+    def create_sqs_event(self, event):
+        sqs_event = {
+            'Records': [
+                {
+                    'messageId': 'messageId',
+                    'receiptHandle': 'receiptHandle',
+                    'body': json.dumps(event['body']),
+                    'messageAttributes': {},
+                    'md5OfBody': '51a18d1e6f9dc116504f4d7125e867fb',
+                    'eventSource': 'aws:sqs',
+                    'eventSourceARN': event['sqs_queue'],
+                    'awsRegion': 'us-east-1'
+                }
+            ]
+        }
+        return sqs_event
