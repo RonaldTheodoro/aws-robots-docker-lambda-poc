@@ -7,4 +7,6 @@
 **/.vscode
 **/__pycache__
 **/*.pyc
+**/.payloads
+**/queues
 README.md
