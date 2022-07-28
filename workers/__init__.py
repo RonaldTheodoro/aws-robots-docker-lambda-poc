@@ -8,3 +8,4 @@ from workers.worker_07 import Worker07
 from workers.worker_08 import Worker08
 from workers.worker_09 import Worker09
 from workers.worker_10 import Worker10
+from workers.worker_cron import WorkerCron

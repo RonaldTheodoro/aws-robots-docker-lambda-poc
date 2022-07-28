@@ -5,8 +5,9 @@ from workers.worker_register import worker_register
 
 
 @worker_register
-class Worker02(BaseWorker):
-    worker_id = 2
+class WorkerCron(BaseWorker):
+    worker_id = 'cron'
 
     def run_robot(self, message):
-        logger.info('Worker02: %s', message)
+        logger.info('WorkerCron: %s', message)
+

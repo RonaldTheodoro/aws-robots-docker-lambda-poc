@@ -1,4 +1,4 @@
-from settings import logger
+from logger import logger
 
 from workers.base_worker import BaseWorker
 from workers.worker_register import worker_register
@@ -8,6 +8,7 @@ from workers.worker_register import worker_register
 class Worker05(BaseWorker):
     worker_id = 5
 
-    def run(self, event, context):
-        logger.info('Worker 05')
-        raise Exception('Worker 05')
+    def run_robot(self, message):
+        logger.info('Worker05: %s', message)
+
+

@@ -1,6 +1,5 @@
 from runner.worker_runner import WorkerRunner
+from runner.local_runner import LocalRunner
 
 
-runner = WorkerRunner()
-
-__all__ = ['runner']
+__all__ = ['WorkerRunner', 'LocalRunner']

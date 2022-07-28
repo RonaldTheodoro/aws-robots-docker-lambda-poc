@@ -1,4 +1,7 @@
 import abc
+import json
+
+from logger import logger
 
 
 class BaseWorker(abc.ABC):
@@ -8,9 +11,15 @@ class BaseWorker(abc.ABC):
     def worker_id(self):
         pass
 
+    @property
     @abc.abstractmethod
-    def run(self, event, context):
+    def run_robot(self, message):
         pass
 
-    def __call__(self, event, context):
-        return self.run(event, context)
+    def run(self, record):
+        logger.info('Worker %s', self.worker_id)
+        message = json.loads(record['body'])
+        self.run_robot(message)
+
+    def __call__(self, record):
+        return self.run(record)
