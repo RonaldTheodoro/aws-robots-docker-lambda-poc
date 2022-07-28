@@ -1,3 +1,4 @@
+import json
 import re
 
 import boto3
@@ -33,6 +34,12 @@ class SQSErrorHandler:
             VisibilityTimeout=300
         )
 
+        self.sqs_client.send_message(
+            MessageBody=record['body'],
+            QueueUrl=self.sqs_url(record),
+            DelaySeconds=30
+        )
+
     def sqs_url(self, record):
         sqs_name = record['eventSourceARN']
         worker_id = re.search(
@@ -45,4 +52,4 @@ class SQSErrorHandler:
         worker_id = worker_id.group('worker_id')
 
         url_base = f'https://sqs.{settings.REGION}.amazonaws.com'
-        return f'{url_base}/{settings.ACCOUNT_ID}/{worker_id}'
+        return f'{url_base}/{settings.ACCOUNT_ID}/worker_{worker_id}'

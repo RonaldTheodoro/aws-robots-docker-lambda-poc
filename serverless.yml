@@ -14,7 +14,7 @@ provider:
     images:
       workers-image:
         path: ./
-        file: ./docker/Dockerfile
+        file: ./docker/Dockerfile.dev
 
 functions:
   workers:
@@ -30,6 +30,7 @@ functions:
     iamRoleStatements:
       - Effect: "Allow"
         Action:
+          - sqs:SendMessage
           - sqs:ReceiveMessage
           - sqs:ChangeMessageVisibility
         Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_1
@@ -46,6 +47,7 @@ functions:
     iamRoleStatements:
       - Effect: "Allow"
         Action:
+          - sqs:SendMessage
           - sqs:ReceiveMessage
           - sqs:ChangeMessageVisibility
         Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_2
@@ -62,6 +64,7 @@ functions:
     iamRoleStatements:
       - Effect: "Allow"
         Action:
+          - sqs:SendMessage
           - sqs:ReceiveMessage
           - sqs:ChangeMessageVisibility
         Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_3
@@ -78,6 +81,7 @@ functions:
     iamRoleStatements:
       - Effect: "Allow"
         Action:
+          - sqs:SendMessage
           - sqs:ReceiveMessage
           - sqs:ChangeMessageVisibility
         Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_4
@@ -94,6 +98,7 @@ functions:
     iamRoleStatements:
       - Effect: "Allow"
         Action:
+          - sqs:SendMessage
           - sqs:ReceiveMessage
           - sqs:ChangeMessageVisibility
         Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_5
@@ -110,6 +115,7 @@ functions:
     iamRoleStatements:
       - Effect: "Allow"
         Action:
+          - sqs:SendMessage
           - sqs:ReceiveMessage
           - sqs:ChangeMessageVisibility
         Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_6
@@ -126,6 +132,7 @@ functions:
     iamRoleStatements:
       - Effect: "Allow"
         Action:
+          - sqs:SendMessage
           - sqs:ReceiveMessage
           - sqs:ChangeMessageVisibility
         Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_7
@@ -142,6 +149,7 @@ functions:
     iamRoleStatements:
       - Effect: "Allow"
         Action:
+          - sqs:SendMessage
           - sqs:ReceiveMessage
           - sqs:ChangeMessageVisibility
         Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_8
@@ -158,6 +166,7 @@ functions:
     iamRoleStatements:
       - Effect: "Allow"
         Action:
+          - sqs:SendMessage
           - sqs:ReceiveMessage
           - sqs:ChangeMessageVisibility
         Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_9
@@ -174,6 +183,7 @@ functions:
     iamRoleStatements:
       - Effect: "Allow"
         Action:
+          - sqs:SendMessage
           - sqs:ReceiveMessage
           - sqs:ChangeMessageVisibility
         Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_10
@@ -190,6 +200,7 @@ functions:
     iamRoleStatements:
       - Effect: "Allow"
         Action:
+          - sqs:SendMessage
           - sqs:ReceiveMessage
           - sqs:ChangeMessageVisibility
         Resource: arn:aws:sqs:${env:REGION}:${env:ACCOUNT_ID}:worker_cron

@@ -10,6 +10,3 @@ class Worker05(BaseWorker):
 
     def run_robot(self, message):
         logger.info('Worker05: %s', message)
-        raise Exception()
-
-
