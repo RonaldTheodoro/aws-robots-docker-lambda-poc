@@ -3,9 +3,12 @@ import re
 
 from workers.worker_register import worker_register
 from logger import logger
-
+from runner.robot_error_handler import RobotErrorHandler
 
 class WorkerRunner:
+
+    def __init__(self):
+        self.robot_error_handler = RobotErrorHandler()
 
     def __call__(self, event, context):
         logger.info('Start worker runner')
@@ -29,9 +32,7 @@ class WorkerRunner:
         worker = worker_register.get_worker_by_id(worker_id)
 
         logger.info('Running worker')
-        instance = worker()
-        instance(record)
-    
+        self.robot_error_handler(worker, record)
 
     def get_worker_id_from_sqs_name(self, record):
         sqs_name = record['eventSourceARN']
