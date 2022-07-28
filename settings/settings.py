@@ -8,7 +8,7 @@ class Settings:
     BASE_DIR = pathlib.Path(__file__).parent.parent
     STAGE = config('STAGE', cast=Choices(['local', 'dev', 'homolog', 'prod']))
     ACCOUNT_ID = config('ACCOUNT_ID')
-    REGION: config('REGION', cast=Choices(['us-east-1', 'us-east-2']))
+    REGION = config('REGION', cast=Choices(['us-east-1', 'us-east-2']))
 
     @property
     def extras(self):
